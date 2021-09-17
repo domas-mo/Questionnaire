@@ -1,52 +1,70 @@
-> ⭐ ***README** to coś więcej niż opis. Poprzez nie **pokazujesz swoje mocne strony** – swoją dokładność, sposób myślenia i podejście do rozwiązywania problemów. Niech Twoje README pokaże, że masz **świetne predyspozycje do rozwoju!***
-> 
-> 🎁 *Zacznij od razu. Skorzystaj z **[szablonu README i wskazówek](https://github.com/devmentor-pl/readme-template)**.* 
+# Getting Started with Create React App
 
-&nbsp;
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Available Scripts
 
-# Neumorphism
+In the project directory, you can run:
 
-Neumorphism to pewien trend w projektowaniu, który opiera się na odpowiednim wykorzystaniu cieni.
+### `npm start`
 
-W tym projekcie Twoim zadaniem będzie utworzeniu kilku komponentów zgodnych z tym trendem wykorzystując Styled Components. Na ich podstawie zbudujesz rozbudowany formularz. Od Ciebie będzie zależeć jakie elementy będą miały się w nim pojawić.
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-Zanim przejdziesz do implementowania to zapoznaj się z kilkoma artykułami na temat nowego trendu:
-- https://uxdesign.cc/neumorphism-in-user-interfaces-b47cef3bf3a6 (jeśli wykorzystałeś darmowy limit to wystarczy, że otworzyć tą stronę w oknie "imcognito")
-- https://www.justinmind.com/blog/neumorphism-ui/
-- https://opengeekslab.com/blog/neumorphism-the-next-big-thing-ui-design/
+The page will reload if you make edits.\
+You will also see any lint errors in the console.
 
-## Komponenty
+### `npm test`
 
-Po zapoznaniu się z linkami podanymi wyżej wiesz już na czym polega Neumorphism. Jeśli potrzebujesz dodatkowych wskazówek to zachęcam Cię do [skorzystania z generatora](https://neumorphism.io/). Możesz również inspirować się [przykładami innych](https://bashooka.com/inspiration/neumorphism-ui-design-examples/).
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-Jeśli masz własną koncepcję komponentów to nie widzę przeszkód, abyś z nich skorzystał. Jeśli nie to możesz się wzorować z poniższą grafiką od [Emy Lascan](https://dribbble.com/shots/9527558-Freebie-Neumorphic-UX-UI-Elements).
+### `npm run build`
 
-![](./example.png)
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-## Formularz
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-W momencie kiedy masz już gotowe komponenty możesz zbudować swój formularz.
+### `npm run eject`
 
-Pamiętaj, aby prezentował on w pełni Twoje możliwości np.:
-- możesz go podzielić na 3 etapy (ekrany), po których można wygodnie się przemieszczać
-- lista rozwijana jest implementowana przez specjalne rozwiązanie innne niż `select`
-- elementy typu `chceckbox` czy `radio` są animowane
-- poziom wypełania formularza jest prezentowane przez pasek postępu
-- użytkownik po wprowadzeniu błędnych danych jest natychmiastowo o tym informowany
+**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
+If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Jestem pewny, że ten porojekt mocno zainteresuje Twojego przyszłego pracodawcę!
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
+You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-PS. Konfigurację środowiska robisz według własnego uznania.
+## Learn More
 
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
+To learn React, check out the [React documentation](https://reactjs.org/).
 
-&nbsp;
+### Code Splitting
 
-> ⭐ ***README** to coś więcej niż opis. Poprzez nie **pokazujesz swoje mocne strony** – swoją dokładność, sposób myślenia i podejście do rozwiązywania problemów. Niech Twoje README pokaże, że masz **świetne predyspozycje do rozwoju!***
-> 
-> 🎁 *Zacznij od razu. Skorzystaj z **[szablonu README i wskazówek](https://github.com/devmentor-pl/readme-template)**.* 
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
+### Analyzing the Bundle Size
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+
+### Making a Progressive Web App
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+
+### Advanced Configuration
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+
+### Deployment
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+
+### `npm run build` fails to minify
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
