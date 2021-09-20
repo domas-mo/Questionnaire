@@ -15,7 +15,7 @@ const opacity = keyframes`
 const StyledHeader = styled.header`
     animation: ${opacity} 1.5s ease-in;
     margin: 200px auto;
-    width: 50%;
+    width: 50vw;
     padding-bottom: 1.3rem;
     display: flex;
     flex-direction: column;

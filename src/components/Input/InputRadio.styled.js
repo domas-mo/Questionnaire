@@ -13,7 +13,7 @@ const StyledInputRadio = styled.div`
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		width: 100px;
+		width: 10vw;
         height: 40px;
         background: #e9eaee;
         border-radius: 10px;

@@ -8,6 +8,11 @@ const GlobalStyle = createGlobalStyle`
         color: #676b76;
         font-size: 15px;
      }
+   
+     p {
+        text-align: center;
+        margin-top: 10px;
+     }
 
 `
 

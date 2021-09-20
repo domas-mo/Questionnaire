@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const StyledInputCheckbox = styled.div`
-    display: flex;
+  display: flex;
 	justify-content: center;
 	align-items: center;
 	flex-wrap: wrap;

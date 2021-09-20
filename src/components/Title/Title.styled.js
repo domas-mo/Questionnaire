@@ -6,7 +6,6 @@ const StyledTitle = styled.h1`
   color: #185bf1;
   margin-top: 2rem;
   letter-spacing: 1px;
-
 `;
 
 export default StyledTitle; 

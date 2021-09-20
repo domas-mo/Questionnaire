@@ -15,7 +15,7 @@ const opacity = keyframes`
 const StyledSection = styled.section`
     animation: ${opacity} 1s ease-in;
     margin: 20px auto;
-    width: 50%;
+    width: 50vw;
     display: flex;
     flex-direction: column;
     align-items: center;

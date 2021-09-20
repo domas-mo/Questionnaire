@@ -36,10 +36,9 @@ const Form = () => {
 				<StyledForm onSubmit={e => {
 					handleSubmit(e);
 					formSuccessHandler();
-
-                    console.log(errors.length)
 				}}>
                     <Title>Questionnaire</Title>
+					<ProgressBar progressError={errorsCount} allFields={values}/>
 					<StyledFormDiv>
 						<label htmlFor="firstName">
 						<Input type="text" id="firstName" placeholder="First Name" name="firstName" value={values.firstName}
@@ -73,7 +72,7 @@ const Form = () => {
 						{generateList(counterCheckboxHandler, dataListMusic)}
 					</StyledFormDiv>
 					{errors.music && <Errors name={errors.music}/>}
-					<ProgressBar progressError={errorsCount} allFields={values}/>
+					
 					<Button type="submit" disabled={errorsCount !== 0} >Submit</Button>
 				</StyledForm>
 		) : <Message/>

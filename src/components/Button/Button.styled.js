@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 const StyledButton = styled.button`
-    margin: 0 auto;
+    margin: 20px auto;
     margin-bottom: 40px;
     color: #185bf1;
     letter-spacing: 2px;
