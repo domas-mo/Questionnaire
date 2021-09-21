@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import Input from "../Input/Input";
 import InputRadio from "../Input/InputRadio";
 import Button from "../Button/Button";
@@ -20,6 +20,12 @@ import validate from "../../helpers/validate";
 
 const Form = () => {
     const [formSuccess, formSuccessHandler] = useFormSucess()
+	const [error, setErrors] = useState({
+		firstName: false,
+		lastName: false,
+		gender: false,
+	});
+	
 	const {
 		handleChange,
 		handleSubmit,
@@ -29,6 +35,12 @@ const Form = () => {
 		checkChosenGender,
 	} = useForm(validate);
 
+	const validateInputs = (e) => {
+		if (e.target.value === "error")
+		  setErrors({ ...error, [e.target.name]: true });
+		else setErrors({ ...error, [e.target.name]: false });
+	};
+	
 	const errorsCount = Object.keys(errors).length;
 
     return (
@@ -42,37 +54,36 @@ const Form = () => {
 					<StyledFormDiv>
 						<label htmlFor="firstName">
 						<Input type="text" id="firstName" placeholder="First Name" name="firstName" value={values.firstName}
-						       onChange={handleChange}/>
+						       onChange={handleChange} onBlur={validateInputs}/>
                         </label>
 					</StyledFormDiv>
-					{errors.firstName && <Errors name={errors.firstName}/>}
+					{values.firstName && errors.firstName && <Errors name={errors.firstName}/>}
 					<StyledFormDiv>
 						<label htmlFor="lastName">
 						<Input type="text" id="lastName" placeholder="Last name" name="lastName" value={values.lastName}
-						       onChange={handleChange}/>
+						       onChange={handleChange} onBlur={validateInputs}/>
                         </label>
 					</StyledFormDiv>
-					{errors.lastName && <Errors name={errors.lastName}/>}
+					{values.lastName && errors.lastName && <Errors name={errors.lastName}/>}
 					<StyledFormDiv>
 						<label htmlFor="emial">
 						<Input type="email" id="email" placeholder="Email" name="email" value={values.email}
 						       onChange={handleChange}/>
                         </label>
 					</StyledFormDiv>
-					{errors.email && <Errors name={errors.email}/>}
+					{values.email && errors.email && <Errors name={errors.email}/>}
 					<StyledFormDiv>
-						<InputRadio checkChosenGender={checkChosenGender}/>
+						<InputRadio onBlur={validateInputs} checkChosenGender={checkChosenGender}/>
 					</StyledFormDiv>
-					{errors.gender && <Errors name={errors.gender}/>}
+					{values.gender && errors.gender && <Errors name={errors.gender}/>}
 					<StyledFormDiv>
-						{generateList(counterCheckboxHandler, dataListWay)}
+						{generateList(counterCheckboxHandler, dataListWay, validateInputs)}
 					</StyledFormDiv>
 					{errors.way && <Errors name={errors.way}/>}
 					<StyledFormDiv>
-						{generateList(counterCheckboxHandler, dataListMusic)}
+						{generateList(counterCheckboxHandler, dataListMusic, validateInputs)}
 					</StyledFormDiv>
 					{errors.music && <Errors name={errors.music}/>}
-					
 					<Button type="submit" disabled={errorsCount !== 0} >Submit</Button>
 				</StyledForm>
 		) : <Message/>

@@ -13,7 +13,6 @@ const useForm = (validate) => {
 	const [values, setValues] = useState(initial);
 	const [errors, setErrors] = useState({});
 
-
 	const counterCheckboxHandler = (value) => {
 		setValues((prevState) => {
 			return {...prevState, checkMusic: prevState.checkMusic + value, checkWay: prevState.checkWay + value};

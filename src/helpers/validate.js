@@ -3,9 +3,13 @@ export default function validate(values) {
 
 	if (!values.firstName.trim()) {
 		errors.firstName = 'Please complete the name!';
+	} else if (Object.keys(values.firstName).length < 2) {
+		errors.firstName = 'Please complete the name!';
 	}
 
 	if (!values.lastName.trim()) {
+		errors.lastName = 'Please complete the last name!';
+	} else if (Object.keys(values.lastName).length < 2) {
 		errors.lastName = 'Please complete the last name!';
 	}
 
@@ -19,7 +23,7 @@ export default function validate(values) {
 		errors.gender = 'Please choose gender! '
 	}
 
-	if(values.checkMusic < 3) {
+	if(values.checkMusic < 4) {
 		errors.music = 'Please choose at least 3 type of music you listen to'
 	}
 
