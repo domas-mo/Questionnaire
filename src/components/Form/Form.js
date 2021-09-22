@@ -19,13 +19,18 @@ import useFormSucess from "../../hooks/useFormSucess";
 import validate from "../../helpers/validate";
 
 const Form = () => {
-    const [formSuccess, formSuccessHandler] = useFormSucess()
-	const [error, setErrors] = useState({
+	const initial = {
 		firstName: false,
 		lastName: false,
+		email: false, 
 		gender: false,
-	});
-	
+		music: false,
+		way: false,
+	}
+
+    const [formSuccess, formSuccessHandler] = useFormSucess()
+	const [flag, setFlag] = useState(initial)
+
 	const {
 		handleChange,
 		handleSubmit,
@@ -36,11 +41,13 @@ const Form = () => {
 	} = useForm(validate);
 
 	const validateInputs = (e) => {
-		if (e.target.value === "error")
-		  setErrors({ ...error, [e.target.name]: true });
-		else setErrors({ ...error, [e.target.name]: false });
+		if (errorsCount > 0) {
+			setFlag({ ...flag, [e.target.name]: true });
+		} else  {
+			setFlag({ ...flag, [e.target.name]: false });
+		}
 	};
-	
+
 	const errorsCount = Object.keys(errors).length;
 
     return (
@@ -57,34 +64,38 @@ const Form = () => {
 						       onChange={handleChange} onBlur={validateInputs}/>
                         </label>
 					</StyledFormDiv>
-					{values.firstName && errors.firstName && <Errors name={errors.firstName}/>}
+					{flag.firstName ? errors.firstName && <Errors name={errors.firstName}/> : null}
 					<StyledFormDiv>
 						<label htmlFor="lastName">
 						<Input type="text" id="lastName" placeholder="Last name" name="lastName" value={values.lastName}
 						       onChange={handleChange} onBlur={validateInputs}/>
                         </label>
 					</StyledFormDiv>
-					{values.lastName && errors.lastName && <Errors name={errors.lastName}/>}
+					{flag.lastName ? errors.lastName && <Errors name={errors.lastName}/> : null}
 					<StyledFormDiv>
 						<label htmlFor="emial">
 						<Input type="email" id="email" placeholder="Email" name="email" value={values.email}
-						       onChange={handleChange}/>
+						       onChange={handleChange} onBlur={validateInputs}/>
                         </label>
 					</StyledFormDiv>
-					{values.email && errors.email && <Errors name={errors.email}/>}
+					{flag.email ? errors.email && <Errors name={errors.email}/> : null}
 					<StyledFormDiv>
-						<InputRadio onBlur={validateInputs} checkChosenGender={checkChosenGender}/>
+						<InputRadio checkChosenGender={checkChosenGender}/>
 					</StyledFormDiv>
-					{values.gender && errors.gender && <Errors name={errors.gender}/>}
+					{flag.gender ? errors.gender && <Errors name={errors.gender}/> : null}
 					<StyledFormDiv>
-						{generateList(counterCheckboxHandler, dataListWay, validateInputs)}
+						{generateList(counterCheckboxHandler, dataListWay)}
 					</StyledFormDiv>
-					{errors.way && <Errors name={errors.way}/>}
+					{flag.way ? errors.way && <Errors name={errors.way}/> : null}
 					<StyledFormDiv>
-						{generateList(counterCheckboxHandler, dataListMusic, validateInputs)}
+						{generateList(counterCheckboxHandler, dataListMusic)}
 					</StyledFormDiv>
-					{errors.music && <Errors name={errors.music}/>}
-					<Button type="submit" disabled={errorsCount !== 0} >Submit</Button>
+					{flag.music ? errors.music && <Errors name={errors.music}/> : null}
+					<Button type="submit" onClick={(e) => {
+						if(errorsCount > 0 && e.target.type === "submit") {
+							setFlag({ ...flag, firstName: true, lastName: true, email: true, gender: true, way: true, music: true});
+						}
+					}}>Submit</Button>
 				</StyledForm>
 		) : <Message/>
  

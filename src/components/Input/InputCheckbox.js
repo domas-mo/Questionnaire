@@ -2,6 +2,7 @@ import React from 'react';
 import StyledInputCheckbox from './InputCheckbox.styled';
 import useCheckbox from './../../hooks/useCheckbox';
 
+
 const InputCheckbox = (props) => {
 	const [checked, checkedHandler] = useCheckbox();
 
@@ -11,7 +12,7 @@ const InputCheckbox = (props) => {
 
 	return (
 		<StyledInputCheckbox key={props.id + checked}>
-			<input type="checkbox" name={props.name} id={props.text} checked={checked} onChange={checkedHandler} onClick={counterCheckedBoxes}/>
+			<input type="checkbox" name={props.name} onBlur={props.onBlur} id={props.text} checked={checked} onChange={checkedHandler} onClick={counterCheckedBoxes}/>
 			<label htmlFor={props.text}>
 				<span className={props.class}>
 					{props.text}
