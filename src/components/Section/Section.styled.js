@@ -13,7 +13,7 @@ const opacity = keyframes`
 `;
 
 const StyledSection = styled.section`
-    animation: ${opacity} 1s ease-in;
+    animation: ${opacity} 2s ease-in;
     margin: 20px auto;
     width: 50vw;
     display: flex;

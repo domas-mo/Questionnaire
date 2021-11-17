@@ -7,7 +7,6 @@ const useForm = (validate) => {
 		lastName: '',
 		email: '',
 		checkMusic: 0,
-		checkWay: 0,
 		gender: false,
 	};
 	const [values, setValues] = useState(initial);
@@ -15,7 +14,7 @@ const useForm = (validate) => {
 
 	const counterCheckboxHandler = (value) => {
 		setValues((prevState) => {
-			return {...prevState, checkMusic: prevState.checkMusic + value, checkWay: prevState.checkWay + value};
+			return {...prevState, checkMusic: prevState.checkMusic + value};
 		});
 	};
 
